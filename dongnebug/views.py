@@ -11,7 +11,7 @@ from . import models
 from .forms import *
 from api.models import Locations
 import random
-from scipy.spatial import distance
+
 
 
 class ComplainDetailView(DetailView):
