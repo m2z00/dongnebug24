@@ -1,5 +1,3 @@
-{% load static %}
-{% load socialaccount %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,45 +14,59 @@
     <link rel="stylesheet" type="text/css" href="buk.css">
     <title>동네북24</title>
     <style media="screen">
-      body{
-        background : #D9EDFD;
+      #userimage{
+        text-align :center;
       }
-      #login-logo{
+      #currentID{
         text-align : center;
-        font-family :'Nanum Gothic', sans-serif;
-        font-size : x-large;
+        font-size : large;
         font-weight : bold;
-        padding-top : 130px;
-        margin-bottom : 60px;
       }
-      #loginbutton{
-        text-align : center;
-      }
-      #probulpeon{
-        text-align : center;
+      #edit-bar{
         font-family :'Nanum Gothic', sans-serif;
-        font-size : small;
-        padding-top : 60px;
+        font-weight : bold;
       }
     </style>
   </head>
   <body>
-    <div id ="login-logo">
-      <img src ="{% static 'img/buk.png' %}" width ="100" heigth ="100"><br/>
-      동네북24
+    <div id ="edit-bar"class="fixed-top">
+      <nav class="navbar navbar-light" style="background-color: #D9EDFD;">
+        <!-- Navbar content -->
+          <a href="homepage.html">
+            <button class=" mini teal ui button">취소</button>
+          </a>
+          <div id ="logo">
+            <a id ="logotext" class="navbar-brand" href="#" >내 정보 수정</a>
+          </div>
+          <button class=" mini ui button">완료</button> <!-- db에 닉네임 업데이트-->
+        </nav>
+      </div>
 
-    </div>
-      <br/>
-      <br/>
-    <div id ="loginbutton">
-        <a href="{% provider_login_url 'kakao' %}"><img src ="{% static 'img/kakao.png' %}" width="225" height="" style ="margin-bottom : 5px;"></a><br/>
-        <a href="{% provider_login_url 'naver' %}"><img src ="{% static 'img/naver.png' %}" width="225" height="" style ="margin-bottom : 2px;"></a><br/>
-        <a href="{% provider_login_url 'google' %}"><img src ="{% static 'img/google.png' %}" width="232" height=""></a>
 
-    </div>
-    <div id ="probulpeon">
-      @probulpyeonreo
-    </div>
+      <div id="text" style ="padding-top : 100px">
+        <div id ="userimage">
+
+          <br/>
+        <img src ="img/user.png" width ="60" height ="60" >
+        </div>
+        <br/>
+        <div id ="currentID">컴공의 누군가</div>
+        <br/>
+        <hr>
+        <br/>
+        <div>
+          <div class="ui form">
+            <div class="field">
+              <label>닉네임 변경</label>
+              <input type="text" placeholder="컴공의 누군가">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
